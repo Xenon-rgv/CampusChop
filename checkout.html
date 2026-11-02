@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — CampusChop | Order Confirmation</title>
+  <meta name="description" content="Complete your DELSU campus food order with fast delivery or pickup. Cash or Paystack online payment.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/marketplace.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+  <!-- Header / Navbar Mount -->
+  <header id="navbar-mount"></header>
+
+  <main style="padding: 2.5rem 0 4rem;">
+    <div class="container">
+      <div style="margin-bottom: 2rem;">
+        <h1 style="font-size: 2.25rem; margin-bottom: 0.25rem;">Checkout</h1>
+        <p style="color: var(--text-secondary); font-size: 0.95rem;">
+          Provide your delivery details and choose your preferred payment method
+        </p>
+      </div>
+
+      <form id="checkout-form">
+        <div class="cart-layout">
+          <!-- Checkout Customer & Delivery Form -->
+          <div>
+            <!-- Section 1: Customer Contact -->
+            <div class="card card-body" style="margin-bottom: 1.5rem;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+                <span>👤</span> 1. Contact Information
+              </h3>
+              <div class="form-row two-col">
+                <div class="form-group">
+                  <label class="form-label" for="checkout-name">Full Name <span class="req">*</span></label>
+                  <input type="text" id="checkout-name" class="form-control" required placeholder="e.g. Oghenetega David">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="checkout-phone">Phone Number (DELSU Active) <span class="req">*</span></label>
+                  <input type="tel" id="checkout-phone" class="form-control" required placeholder="e.g. 08012345678">
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 2: Fulfilment Details -->
+            <div class="card card-body" style="margin-bottom: 1.5rem;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+                <span>🛵</span> 2. Fulfilment &amp; Destination
+              </h3>
+
+              <div class="form-group">
+                <label class="form-label">How would you like to receive your food?</label>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                  <label style="border: 1.5px solid var(--border); border-radius: var(--radius-md); padding: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 0.65rem;" id="method-delivery-label">
+                    <input type="radio" name="fulfilment_type" value="delivery" checked>
+                    <div>
+                      <div style="font-weight: 700;">Hostel / Campus Delivery</div>
+                      <div style="font-size: 0.8rem; color: var(--text-muted);">Delivered straight to your location</div>
+                    </div>
+                  </label>
+
+                  <label style="border: 1.5px solid var(--border); border-radius: var(--radius-md); padding: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 0.65rem;" id="method-pickup-label">
+                    <input type="radio" name="fulfilment_type" value="pickup">
+                    <div>
+                      <div style="font-weight: 700;">Direct Store Pickup</div>
+                      <div style="font-size: 0.8rem; color: var(--text-muted);">Collect directly from vendor (₦0 fee)</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Delivery Specific Inputs -->
+              <div id="checkout-delivery-fields">
+                <div class="form-group">
+                  <label class="form-label" for="checkout-zone">Select Delivery Zone (Abraka) <span class="req">*</span></label>
+                  <select id="checkout-zone" class="form-control" required>
+                    <option value="">Loading delivery zones...</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="checkout-address">Exact Delivery Address / Hostel / Room <span class="req">*</span></label>
+                  <input type="text" id="checkout-address" class="form-control" placeholder="e.g. Abraka Hall Room 24, Site 2 or Campus Gate Lodges">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="checkout-instructions">Delivery Instructions (Optional)</label>
+                  <textarea id="checkout-instructions" class="form-control" rows="2" placeholder="e.g. Call when outside the gate, extra pepper on jollof, etc."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 3: Payment Method -->
+            <div class="card card-body">
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+                <span>💳</span> 3. Payment Method
+              </h3>
+
+              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <label style="border: 1.5px solid var(--border); border-radius: var(--radius-md); padding: 1rem; cursor: pointer; display: flex; align-items: flex-start; gap: 0.75rem;">
+                  <input type="radio" name="payment_method" value="online" checked style="margin-top: 4px;">
+                  <div>
+                    <div style="font-weight: 700; display: flex; align-items: center; gap: 0.5rem;">
+                      Pay Online (Paystack)
+                      <span class="badge badge-success" style="font-size: 0.65rem;">Cards / Bank / USSD</span>
+                    </div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.2rem;">
+                      Secure NGN payment. Order is immediately confirmed once verified.
+                    </div>
+                  </div>
+                </label>
+
+                <label style="border: 1.5px solid var(--border); border-radius: var(--radius-md); padding: 1rem; cursor: pointer; display: flex; align-items: flex-start; gap: 0.75rem;">
+                  <input type="radio" name="payment_method" value="cash" style="margin-top: 4px;">
+                  <div>
+                    <div style="font-weight: 700;">
+                      Cash on Fulfilment
+                    </div>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.2rem;" id="cash-desc">
+                      Pay cash to delivery rider or at vendor counter upon receiving your food.
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Checkout Order Review Side Panel -->
+          <div>
+            <div class="cart-summary-card">
+              <h3 style="font-size: 1.25rem; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border);">
+                Your Order
+              </h3>
+
+              <!-- Vendor Name -->
+              <div style="margin-bottom: 1rem; font-size: 0.9rem;">
+                <span style="color: var(--text-muted);">From: </span>
+                <strong id="checkout-vendor-name">...</strong>
+              </div>
+
+              <!-- Item List Preview -->
+              <div id="checkout-items-preview" style="max-height: 220px; overflow-y: auto; margin-bottom: 1.25rem; font-size: 0.9rem;">
+                <!-- Populated dynamically -->
+              </div>
+
+              <!-- Price Breakdown -->
+              <div style="border-top: 1px solid var(--border); padding-top: 1rem;">
+                <div class="summary-row">
+                  <span>Subtotal:</span>
+                  <span id="checkout-subtotal">₦0.00</span>
+                </div>
+                <div class="summary-row">
+                  <span id="checkout-fee-label">Delivery Fee:</span>
+                  <span id="checkout-fee">₦0.00</span>
+                </div>
+                <div class="summary-row total">
+                  <span>Total Amount:</span>
+                  <span id="checkout-total" style="color: var(--primary);">₦0.00</span>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" id="place-order-btn" class="btn btn-primary btn-block btn-lg" style="margin-top: 1.5rem;">
+                Place Order Now
+              </button>
+
+              <div style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 0.75rem;">
+                🔒 Safe &amp; verified multi-vendor DELSU marketplace
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Paystack Missing Config Modal -->
+  <div class="modal-overlay" id="paystack-notice-modal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Paystack Online Payment Notice</h3>
+        <button class="modal-close" id="close-paystack-notice">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="font-size: 2.2rem; text-align: center; margin-bottom: 0.75rem;">💳 ℹ️</div>
+        <p style="font-size: 0.95rem; color: var(--text-main); margin-bottom: 0.75rem; line-height: 1.5;">
+          Online payment requires your <code>PAYSTACK_SECRET_KEY</code> to be configured in Supabase Edge Functions.
+        </p>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; background: var(--bg-alt); padding: 0.85rem; border-radius: var(--radius-sm); margin-bottom: 1rem;">
+          To configure: Run <code>supabase secrets set PAYSTACK_SECRET_KEY=sk_test_...</code> on your Supabase project CLI or deploy Edge Functions.
+        </p>
+        <p style="font-size: 0.9rem; font-weight: 600;">
+          Would you like to complete this order using Cash on Delivery / Cash on Pickup instead?
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="cancel-paystack-notice">Review Details</button>
+        <button class="btn btn-primary" id="switch-cash-btn">Switch to Cash &amp; Complete Order</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Mount -->
+  <footer id="footer-mount"></footer>
+
+  <script type="module" src="/js/pages/checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart — CampusChop | DELSU Food Delivery</title>
+  <meta name="description" content="Review your selected meals, select delivery or pickup for DELSU Abraka, and proceed to secure checkout.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/marketplace.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+  <!-- Header / Navbar Mount -->
+  <header id="navbar-mount"></header>
+
+  <main style="padding: 2.5rem 0 4rem;">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+        <div>
+          <h1 style="font-size: 2.25rem; margin-bottom: 0.25rem;">Shopping Cart</h1>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">Review your meals before proceeding to checkout</p>
+        </div>
+        <button id="clear-cart-btn" class="btn btn-sm btn-outline text-danger" style="display: none;">
+          🗑️ Clear Cart
+        </button>
+      </div>
+
+      <!-- Main Cart Layout -->
+      <div class="cart-layout" id="cart-content-layout">
+        <!-- Cart Line Items Card -->
+        <div class="cart-items-card" id="cart-items-container">
+          <div class="skeleton" style="height: 250px;"></div>
+        </div>
+
+        <!-- Order Summary Card -->
+        <div class="cart-summary-card" id="cart-summary-container">
+          <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border);">
+            Order Summary
+          </h3>
+
+          <!-- Fulfilment Method Choice -->
+          <div class="form-group">
+            <label class="form-label">Fulfilment Method</label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+              <button id="choose-delivery-btn" class="btn btn-sm btn-primary" type="button">
+                🛵 Delivery
+              </button>
+              <button id="choose-pickup-btn" class="btn btn-sm btn-outline" type="button">
+                🛍️ Pickup
+              </button>
+            </div>
+          </div>
+
+          <!-- Delivery Zone Picker (shown if delivery selected) -->
+          <div class="form-group" id="delivery-zone-wrap">
+            <label class="form-label" for="cart-zone-select">
+              Delivery Zone (Abraka) <span class="req">*</span>
+            </label>
+            <select id="cart-zone-select" class="form-control">
+              <option value="">Loading campus delivery zones...</option>
+            </select>
+            <div class="form-hint" id="zone-hint">
+              Select your campus hostel, faculty or town location
+            </div>
+          </div>
+
+          <!-- Price Calculations -->
+          <div style="margin: 1.5rem 0 1rem; border-top: 1px solid var(--border); padding-top: 1rem;">
+            <div class="summary-row">
+              <span>Subtotal:</span>
+              <span id="summary-subtotal" style="font-weight: 600;">₦0.00</span>
+            </div>
+            <div class="summary-row">
+              <span id="summary-fee-label">Delivery Fee:</span>
+              <span id="summary-fee" style="font-weight: 600;">₦0.00</span>
+            </div>
+            <div class="summary-row total">
+              <span>Total Amount:</span>
+              <span id="summary-total" style="color: var(--primary);">₦0.00</span>
+            </div>
+          </div>
+
+          <!-- Checkout CTA -->
+          <a href="/checkout.html" id="proceed-checkout-btn" class="btn btn-primary btn-block btn-lg" style="margin-top: 1.25rem;">
+            Proceed to Checkout &rarr;
+          </a>
+
+          <div style="text-align: center; margin-top: 1rem;">
+            <a href="/marketplace.html" style="font-size: 0.85rem; color: var(--text-muted); text-decoration: underline;">
+              &larr; Add more meals from marketplace
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Mount -->
+  <footer id="footer-mount"></footer>
+
+  <script type="module" src="/js/pages/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up &amp; Vendor Onboarding — CampusChop | DELSU</title>
+  <meta name="description" content="Create a customer account or register as a food vendor on CampusChop in DELSU Abraka.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/auth.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+  <!-- Header / Navbar Mount -->
+  <header id="navbar-mount"></header>
+
+  <main class="auth-wrapper">
+    <div class="auth-card wide">
+      <div class="auth-header">
+        <div class="logo-badge">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h1 id="register-title">Join CampusChop</h1>
+        <p id="register-subtitle">Connect with DELSU food vendors and hungry students</p>
+      </div>
+
+      <!-- Account Type Switcher Tabs -->
+      <div class="role-switcher">
+        <button type="button" id="tab-customer" class="role-tab active">
+          🎓 Student / Customer
+        </button>
+        <button type="button" id="tab-vendor" class="role-tab">
+          🧑‍🍳 Food Vendor Partner
+        </button>
+      </div>
+
+      <!-- Alert Box -->
+      <div id="register-alert" class="auth-alert auth-alert-error">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span id="register-alert-text">Error message</span>
+      </div>
+
+      <!-- Success Notice for Vendor Application -->
+      <div id="vendor-pending-notice" class="pending-banner" style="display: none;">
+        <h4 style="color:#92400E; margin-bottom:0.35rem;">🎉 Vendor Application Submitted!</h4>
+        <p style="margin: 0; line-height: 1.5;">
+          Your vendor application has been received and is currently <strong>Pending Administrator Approval</strong>.
+          Our campus admin team reviews applications promptly. Once approved, you can log in to your dashboard, publish meals, and receive customer orders!
+        </p>
+        <div style="margin-top: 1rem;">
+          <a href="/login.html" class="btn btn-sm btn-primary">Go to Login</a>
+        </div>
+      </div>
+
+      <!-- Customer Registration Form -->
+      <form id="customer-register-form">
+        <div class="form-row two-col">
+          <div class="form-group">
+            <label class="form-label" for="reg-name">Full Name <span class="req">*</span></label>
+            <input type="text" id="reg-name" class="form-control" placeholder="e.g. Praise Oghenekevwe" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reg-phone">Phone Number (DELSU Active) <span class="req">*</span></label>
+            <input type="tel" id="reg-phone" class="form-control" placeholder="e.g. 08123456789" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reg-email">Email Address <span class="req">*</span></label>
+          <input type="email" id="reg-email" class="form-control" placeholder="e.g. praise@gmail.com" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="reg-password">Password <span class="req">*</span></label>
+          <input type="password" id="reg-password" class="form-control" placeholder="At least 6 characters" minlength="6" required>
+        </div>
+
+        <button type="submit" id="customer-submit-btn" class="btn btn-primary btn-block btn-lg" style="margin-top: 1.5rem;">
+          Create Customer Account
+        </button>
+      </form>
+
+      <!-- Vendor Registration Form -->
+      <form id="vendor-register-form" style="display: none;">
+        <div style="background: var(--primary-subtle); padding: 0.85rem 1rem; border-radius: var(--radius-md); margin-bottom: 1.5rem; font-size: 0.85rem; color: #9A3412;">
+          🏪 <strong>Vendor Onboarding:</strong> New vendor applications are created with <code>pending</code> status and require administrator approval before going live.
+        </div>
+
+        <!-- Vendor Account Credentials -->
+        <div class="form-row two-col">
+          <div class="form-group">
+            <label class="form-label" for="vendor-owner-name">Owner / Manager Name <span class="req">*</span></label>
+            <input type="text" id="vendor-owner-name" class="form-control" placeholder="e.g. Mrs. Blessing Okoro" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="vendor-phone">Business Contact Phone <span class="req">*</span></label>
+            <input type="tel" id="vendor-phone" class="form-control" placeholder="e.g. 08098765432" required>
+          </div>
+        </div>
+
+        <div class="form-row two-col">
+          <div class="form-group">
+            <label class="form-label" for="vendor-email">Account Email <span class="req">*</span></label>
+            <input type="email" id="vendor-email" class="form-control" placeholder="e.g. blessingbites@gmail.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="vendor-password">Account Password <span class="req">*</span></label>
+            <input type="password" id="vendor-password" class="form-control" placeholder="At least 6 characters" minlength="6" required>
+          </div>
+        </div>
+
+        <!-- Business Details -->
+        <div class="form-row two-col">
+          <div class="form-group">
+            <label class="form-label" for="vendor-biz-name">Business / Restaurant Name <span class="req">*</span></label>
+            <input type="text" id="vendor-biz-name" class="form-control" placeholder="e.g. Blessing Bites DELSU" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="vendor-category">Primary Food Category <span class="req">*</span></label>
+            <select id="vendor-category" class="form-control" required>
+              <option value="Rice & Meals">Rice &amp; Meals (Jollof, Fried Rice)</option>
+              <option value="Swallow & Soups">Swallow &amp; Soups (Banga, Egusi)</option>
+              <option value="Fast Food & Shawarma">Fast Food &amp; Shawarma</option>
+              <option value="Grills & Suya">Grills &amp; Suya</option>
+              <option value="Snacks & Pastries">Snacks &amp; Pastries</option>
+              <option value="Breakfast & Combos">Breakfast &amp; Combos</option>
+              <option value="Drinks & Beverages">Drinks &amp; Beverages</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="vendor-location">Business Location in Abraka <span class="req">*</span></label>
+          <input type="text" id="vendor-location" class="form-control" placeholder="e.g. Site 2, Beside Faculty of Education or Express Gate" required>
+          <div class="form-hint">State your campus site, faculty vicinity or Abraka street location</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="vendor-desc">Business Description</label>
+          <textarea id="vendor-desc" class="form-control" rows="2" placeholder="Tell students about your specialties, popular dishes and cooking hours..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="vendor-logo-url">Logo / Storefront Image URL (Optional)</label>
+          <input type="url" id="vendor-logo-url" class="form-control" placeholder="https://example.com/logo.jpg">
+          <div class="form-hint">You can also upload food photographs from your vendor dashboard once approved</div>
+        </div>
+
+        <button type="submit" id="vendor-submit-btn" class="btn btn-primary btn-block btn-lg" style="margin-top: 1.5rem;">
+          Submit Vendor Application
+        </button>
+      </form>
+
+      <div class="auth-footer">
+        Already have an account? <a href="/login.html">Sign In here</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Mount -->
+  <footer id="footer-mount"></footer>
+
+  <script type="module" src="/js/pages/register.js"></script>
+</body>
+</html>

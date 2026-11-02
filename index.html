@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusChop — Good food. Less stress. | DELSU Abraka Food Marketplace</title>
+  <meta name="description" content="Discover and order food from top DELSU campus and Abraka food vendors. Doorstep hostel delivery and quick pickup for students and staff.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/marketplace.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+  <!-- Header / Navbar Mount -->
+  <header id="navbar-mount"></header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-pill">
+            <span>🔥</span> DELSU Abraka Food Ordering Marketplace
+          </div>
+          <h1>Your next delicious meal is just a few clicks away.</h1>
+          <p>
+            Discover amazing local food around DELSU and Abraka. Order your favourites and get them delivered or pick them up with zero stress.
+          </p>
+
+          <!-- Search Box -->
+          <div class="hero-search-box">
+            <div class="hero-search-input-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" id="home-search-input" placeholder="Search jollof, shawarma, banga soup, suya..." aria-label="Search food">
+            </div>
+            <button class="btn btn-primary" id="home-search-btn">
+              Explore Food
+            </button>
+          </div>
+
+          <div style="margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:1.25rem; font-size:0.875rem; color:#9CA3AF;">
+            <span>⚡ Fast Campus Delivery</span>
+            <span>📍 Site 1, Site 2 &amp; Site 3</span>
+            <span>💵 Cash or Paystack Online</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section style="padding: 3.5rem 0 2rem;">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Explore Food Categories</h2>
+            <p class="section-subtitle">Fresh meals prepared daily by Abraka's favorite campus vendors</p>
+          </div>
+          <a href="/marketplace.html" class="btn btn-sm btn-outline">View All &rarr;</a>
+        </div>
+        <div class="categories-bar" id="home-categories-list">
+          <div class="category-chip skeleton" style="width:130px; height:42px;"></div>
+          <div class="category-chip skeleton" style="width:140px; height:42px;"></div>
+          <div class="category-chip skeleton" style="width:150px; height:42px;"></div>
+          <div class="category-chip skeleton" style="width:130px; height:42px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Vendors Section -->
+    <section style="padding: 2.5rem 0;">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Featured Campus Vendors</h2>
+            <p class="section-subtitle">Verified restaurants and independent cooks around DELSU</p>
+          </div>
+          <a href="/marketplace.html#vendors" class="btn btn-sm btn-outline">All Vendors &rarr;</a>
+        </div>
+        <div class="grid-cards" id="home-vendors-grid">
+          <!-- Rendered dynamically -->
+          <div class="vendor-card skeleton" style="height:260px;"></div>
+          <div class="vendor-card skeleton" style="height:260px;"></div>
+          <div class="vendor-card skeleton" style="height:260px;"></div>
+          <div class="vendor-card skeleton" style="height:260px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Meals Section -->
+    <section style="padding: 2.5rem 0 4rem; background: var(--bg-alt);">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Popular Campus Meals</h2>
+            <p class="section-subtitle">Top picks ordered by students and staff this week</p>
+          </div>
+          <a href="/marketplace.html" class="btn btn-sm btn-primary">Full Menu &rarr;</a>
+        </div>
+        <div class="grid-cards" id="home-products-grid">
+          <!-- Rendered dynamically -->
+          <div class="product-card skeleton" style="height:320px;"></div>
+          <div class="product-card skeleton" style="height:320px;"></div>
+          <div class="product-card skeleton" style="height:320px;"></div>
+          <div class="product-card skeleton" style="height:320px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section style="padding: 4.5rem 0;">
+      <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 3rem;">
+          <span class="badge badge-primary" style="margin-bottom:0.75rem;">Simple Process</span>
+          <h2 class="section-title">How CampusChop Works</h2>
+          <p class="section-subtitle">Get warm, freshly cooked meals delivered in 3 straightforward steps</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+          <div class="card card-body" style="text-align: center; padding: 2.25rem 1.5rem;">
+            <div style="width: 3.75rem; height: 3.75rem; background: var(--primary-subtle); color: var(--primary); border-radius: var(--radius-full); display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin-bottom: 1.25rem;">
+              1
+            </div>
+            <h3 style="margin-bottom: 0.65rem;">Discover Local Vendors</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
+              Explore approved food vendors operating inside DELSU Site 1, 2, 3 and around Abraka town.
+            </p>
+          </div>
+
+          <div class="card card-body" style="text-align: center; padding: 2.25rem 1.5rem;">
+            <div style="width: 3.75rem; height: 3.75rem; background: var(--secondary-subtle); color: var(--secondary); border-radius: var(--radius-full); display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin-bottom: 1.25rem;">
+              2
+            </div>
+            <h3 style="margin-bottom: 0.65rem;">Choose Your Favourite Meals</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
+              Browse mouthwatering jollof rice, swallow, grills and snacks, customize portions, and add to cart.
+            </p>
+          </div>
+
+          <div class="card card-body" style="text-align: center; padding: 2.25rem 1.5rem;">
+            <div style="width: 3.75rem; height: 3.75rem; background: var(--accent-gold-subtle); color: #B45309; border-radius: var(--radius-full); display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; margin-bottom: 1.25rem;">
+              3
+            </div>
+            <h3 style="margin-bottom: 0.65rem;">Delivery or Quick Pickup</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
+              Pay securely via Paystack or cash on arrival. Track your order status in real time right to your door.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Become a Vendor Section -->
+    <section style="padding: 4.5rem 0; background: linear-gradient(135deg, #1C1E21, #2D3139); color: white;">
+      <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <span class="badge badge-primary" style="margin-bottom: 1rem;">Grow Your Food Business</span>
+        <h2 style="color: white; font-size: 2.25rem; max-width: 680px; margin-bottom: 1rem;">
+          Sell Food to Thousands of DELSU Students &amp; Abraka Residents
+        </h2>
+        <p style="color: #D1D5DB; font-size: 1.05rem; max-width: 580px; margin-bottom: 2rem; line-height: 1.6;">
+          Join CampusChop to accept orders online, eliminate long queues at your shop, and grow your sales with automated order management.
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+          <a href="/register.html?role=vendor" class="btn btn-lg btn-primary">
+            🧑‍🍳 Apply to Become a Vendor
+          </a>
+          <a href="/login.html" class="btn btn-lg btn-outline" style="color:white; border-color:rgba(255,255,255,0.3);">
+            Vendor Login
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Mount -->
+  <footer id="footer-mount"></footer>
+
+  <script type="module" src="/js/pages/home.js"></script>
+</body>
+</html>

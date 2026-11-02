@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders &amp; Live Tracking — CampusChop | DELSU</title>
+  <meta name="description" content="Track your DELSU campus food delivery in real-time and view your previous food order history on CampusChop.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/marketplace.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+  <!-- Header / Navbar Mount -->
+  <header id="navbar-mount"></header>
+
+  <main style="padding: 2.5rem 0 4rem;">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h1 style="font-size: 2.25rem; margin-bottom: 0.25rem;">My Orders</h1>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">
+            Real-time status tracking for your meals across DELSU campus &amp; Abraka
+          </p>
+        </div>
+        <a href="/marketplace.html" class="btn btn-sm btn-primary">
+          + Order More Food
+        </a>
+      </div>
+
+      <!-- Live Order Focus Banner (if orderId in URL) -->
+      <div id="live-order-focus-card" style="display: none; margin-bottom: 2.5rem;">
+        <!-- Populated dynamically with realtime tracker -->
+      </div>
+
+      <!-- Orders List Container -->
+      <div id="customer-orders-list">
+        <!-- Skeleton Loaders -->
+        <div class="card skeleton" style="height: 180px; margin-bottom: 1.5rem;"></div>
+        <div class="card skeleton" style="height: 180px;"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Mount -->
+  <footer id="footer-mount"></footer>
+
+  <script type="module" src="/js/pages/orders.js"></script>
+</body>
+</html>

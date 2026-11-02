@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor Storefront — CampusChop</title>
+  <meta name="description" content="Order food directly from this approved DELSU Abraka campus vendor on CampusChop.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/marketplace.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+  <!-- Header / Navbar Mount -->
+  <header id="navbar-mount"></header>
+
+  <main>
+    <!-- Storefront Header Area -->
+    <section class="storefront-header" id="storefront-hero">
+      <div class="container">
+        <div class="storefront-details" id="storefront-header-content">
+          <div class="skeleton" style="width: 90px; height: 90px; border-radius: var(--radius-lg);"></div>
+          <div style="flex: 1;">
+            <div class="skeleton" style="width: 250px; height: 32px; margin-bottom: 0.5rem;"></div>
+            <div class="skeleton" style="width: 380px; height: 18px; margin-bottom: 0.5rem;"></div>
+            <div class="skeleton" style="width: 200px; height: 18px;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section style="padding: 2.5rem 0 4rem;">
+      <div class="container">
+        <!-- Storefront Category Pills -->
+        <div class="categories-bar" id="storefront-categories-bar" style="margin-bottom: 2rem;">
+          <button class="category-chip active">Full Menu</button>
+        </div>
+
+        <!-- Meals Grid -->
+        <div class="grid-cards" id="storefront-products-grid">
+          <div class="product-card skeleton" style="height:320px;"></div>
+          <div class="product-card skeleton" style="height:320px;"></div>
+          <div class="product-card skeleton" style="height:320px;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Mount -->
+  <footer id="footer-mount"></footer>
+
+  <script type="module" src="/js/pages/vendor.js"></script>
+</body>
+</html>
